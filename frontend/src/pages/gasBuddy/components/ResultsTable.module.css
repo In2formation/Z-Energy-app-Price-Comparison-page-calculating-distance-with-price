@@ -1,0 +1,195 @@
+.container {
+  position: relative;
+  width: 100%;
+  max-height: 406px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  background-color: #d3d3d3;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  border-radius: 0;
+  transition: all 0.3s ease;
+}
+
+@media (min-width: 600px) {
+  .container {
+    max-height: 466px;
+  }
+}
+
+@media (min-width: 769px) {
+  .container {
+    max-height: 506px;
+  }
+}
+
+/* Custom scrollbar - reduced by 50% */
+.container::-webkit-scrollbar {
+  width: 4px;
+}
+
+.container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 0;
+}
+
+.container::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 0;
+}
+
+.container::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+.contentWrapper {
+  position: relative;
+  z-index: 1;
+  padding: 0;
+}
+
+.tableRow {
+  display: grid;
+  grid-template-columns: clamp(35px, 8vw, 60px) 1fr clamp(70px, 15vw, 120px) clamp(50px, 10vw, 70px);
+  gap: clamp(8px, 2vw, 20px);
+  align-items: center;
+  padding: clamp(8px, 1.5vw, 12px) clamp(10px, 2vw, 16px);
+  padding-right: clamp(20px, 4vw, 30px);
+  margin-bottom: clamp(10px, 2vw, 14px);
+  background-color: #f5f5f5;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.logoContainer {
+  width: clamp(30px, 6vw, 45px);
+  height: clamp(30px, 6vw, 45px);
+  border-radius: 50%;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.logo {
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+}
+
+.stationLocation {
+  font-size: clamp(0.6875rem, 1.5vw, 0.8125rem);
+  color: #666;
+  margin: 0;
+  transition: font-size 0.3s ease;
+}
+
+
+
+
+.stationInfo {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2px, 0.5vw, 4px);
+  min-width: 0;
+  overflow: hidden;
+}
+
+.stationName {
+  font-size: clamp(0.875rem, 2vw, 1.0625rem);
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+  transition: font-size 0.3s ease;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+
+
+
+.dataCell {
+  font-size: clamp(0.75rem, 1.8vw, 0.9375rem);
+  font-weight: 500;
+  color: #333;
+  display: flex;
+  align-items: center;
+  justify-content: center;   /* centre horizontally */
+  padding-right: 0;          /* remove extra right padding */
+  margin-left: -20px;
+  gap: clamp(6px, 1vw, 8px);
+  position: relative;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  min-width: 60px;
+  text-align: center;        /* ensure text itself is centred */
+}
+
+
+.dataCell span,
+.dataCell p {
+  flex-shrink: 0;        /* prevents text from collapsing into divider */
+  margin-left: 8px;      /* pushes distance text away from divider */
+  text-align: right;
+}
+
+
+
+
+
+.priceCell {
+  font-size: clamp(0.875rem, 2.2vw, 1.125rem);
+  font-weight: 700;
+  color: #1a7f00;
+  text-align: right;
+  transition: font-size 0.3s ease;
+}
+
+.emptyState {
+  text-align: center;
+  padding: clamp(30px, 5vw, 40px) clamp(15px, 3vw, 20px);
+  color: #999;
+  font-size: clamp(0.875rem, 2vw, 1rem);
+}
+
+.divider {
+  width: clamp(8px, 1.5vw, 10px);
+  min-height: 60px;
+  background-color: #d3d3d3;
+  position: absolute;
+  right: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-right: -15px;
+}
+
+
+.hovered {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.clickableRow {
+  cursor: pointer;
+}
+
+@media (max-width: 480px) {
+  .tableRow {
+    grid-template-columns: 35px 1fr 20px 50px;
+    gap: 6px;
+  }
+
+  .dataCell {
+    padding-right: 5px;
+  }
+
+  .divider {
+    right: 100%;
+    left: auto;
+    margin-right: 10px;
+  }
+}
+

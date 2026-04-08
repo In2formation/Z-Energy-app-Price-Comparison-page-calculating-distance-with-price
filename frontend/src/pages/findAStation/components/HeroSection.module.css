@@ -1,0 +1,258 @@
+/*  ----- HERO SECTION CSS ----- */
+.heroContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Orange Container (top section of hero) */
+.orangeContainer {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  flex-direction: column;
+  background-color: #ed602e;
+  padding: 0.5rem;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
+  position: relative;
+}
+
+.heroTitle {
+  color: white;
+  padding: 0.5rem;
+}
+
+.searchBarContainer {
+  width: 100%;
+}
+
+.searchBar {
+  width: 100%;
+  border-radius: 0.8rem;
+  border: 0.1rem solid #1e196a;
+  padding: 1rem;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+}
+
+.searchBar::placeholder {
+  color: #c4c3c3;
+  font-weight: 200;
+  font-size: 1rem;
+}
+
+/* Location text and icon */
+.locationContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.locationText {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: #1e196a;
+  padding: 0.5rem;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.locationIcon {
+  font-size: 1.5rem;
+}
+
+
+/* White Container (bottom section of hero) */
+.whiteContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  padding: 1rem;
+  gap: 0.5rem;
+}
+
+.mobileBackButton {
+  width: 130px;
+}
+
+.desktopBackButton {
+  display: none;
+}
+
+.filterButton {
+  align-self: flex-start;
+  background-color: #ffffff;
+  border: none;
+  color: #2e83f9;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.desktopFilters {
+  display: none;
+}
+
+/* ----- RESPONSIVE DESIGN ----- */
+/* Tablet - 768px */
+@media (min-width: 768px) {
+  .orangeContainer {
+    background: linear-gradient(to right, #ed602e, #f5a623);
+    padding: 1.5rem;
+  }
+
+  .searchBar {
+    font-size: 1.1rem;
+    padding: 1.2rem;
+  }
+
+  .whiteContainer {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 1rem 1.5rem;
+  }
+
+  .desktopFilters {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 1.5rem;
+    gap: 0.5rem;
+    background-color: #ffffff;
+    width: 100%;
+  }
+
+  .desktopFiltersRow {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+    width: 100%;
+  }
+
+  .desktopFiltersTitle {
+    font-size: 1rem;
+    font-weight: 200;
+    color: #333333;
+  }
+
+  .desktopFilterGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    flex: 1;
+  }
+
+  .desktopFilterLabel {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #333333;
+  }
+
+  .desktopSelect {
+    padding: 0.5rem 0.7rem;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    font-size: 0.7rem;
+    color: #333333;
+    background-color: #ffffff;
+    cursor: pointer;
+    width: 100%;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
+  }
+
+  .filterButton {
+    display: none;
+  }
+
+  .mobileBackButton {
+    display: none;
+  }
+
+  .desktopBackButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0.5rem 0;
+  }
+}
+
+/* Laptop */
+@media (min-width: 1024px) {
+  .orangeContainer {
+    background: linear-gradient(to right, #ed602e, #f5a623);
+    padding: 2rem;
+    box-shadow: none;
+  }
+
+  .whiteContainer {
+    display: none;
+  }
+
+  .desktopBackButton {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0.5rem 0;
+  }
+
+  .mobileBackButton {
+    display: none;
+  }
+
+  .filterButton {
+    display: none;
+  }
+
+  .desktopFilters {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 0.5rem;
+    background-color: #ffffff;
+    width: 100%;
+  }
+
+  .desktopFiltersRow {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+    width: 100%;
+  }
+
+  .desktopFiltersTitle {
+    font-size: 1rem;
+    font-weight: 200;
+    color: #333333;
+  }
+
+  .desktopFilterGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    flex: 1;
+  }
+
+  .desktopFilterLabel {
+    font-size: 0.8rem;
+    font-weight: 600;
+    columns: #333333;
+  }
+
+  .desktopSelect {
+    padding: 0.5rem 1rem;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    font-size: 0.9rem;
+    color: #333333;
+    background-color: #ffffff;
+    cursor: pointer;
+    width: 100%;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.4);
+  }
+}

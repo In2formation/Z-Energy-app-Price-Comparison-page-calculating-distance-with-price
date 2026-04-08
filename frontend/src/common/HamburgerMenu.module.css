@@ -1,0 +1,281 @@
+/* Overlay covers the whole screen */
+/* Overlay covers the whole screen */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.3);
+  z-index: 9999;
+  display: flex;
+  justify-content: flex-end; /* menu on the right */
+}
+
+
+
+/* Menu panel with fixed size */
+
+/* Menu panel with fixed size */
+.menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 90%;
+  max-width: 402px;
+  height: 100vh;
+  background: #fff;
+  padding: 1rem;
+  box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  font-size: 0.85rem;
+}
+
+.menu.open {
+  transform: translateX(0);
+}
+
+@media (min-width: 375px) {
+  .menu {
+    font-size: 0.9rem;
+  }
+}
+
+@media (min-width: 425px) {
+  .menu {
+    font-size: 0.95rem;
+  }
+}
+
+@media (min-width: 600px) {
+  .menu {
+    width: 402px;
+    font-size: 1rem;
+  }
+}
+
+.iconRow {
+  position: absolute;
+  top: 2.7rem;
+  right: 1rem;
+  height: 30px;
+  display: flex;
+  gap: 0.75rem;
+}
+
+/* Only MagGlass and ModalExit get pointer cursor */
+.clickableIcon {
+  cursor: pointer;
+}
+
+
+.divideIcon {
+  width: 2px;
+  height: 5px;
+  background-color: #ccc; /* or whatever color */
+}
+
+
+
+.menu hr {
+  margin: 30px 0;
+  border: none;
+  border-top: 2px solid #000;
+  width: calc(100% + 2rem); /* extend beyond the 1rem left+right padding */
+  margin-left: -1rem;       /* shift left to cancel padding */
+}
+
+
+
+
+
+/* Close button */
+.closeButton {
+  align-self: flex-end;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Navigation links */
+.menu nav {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.menu nav a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+.menu nav div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+  color: #333;
+  padding-right: 15px;
+}
+
+.menu nav div::after {
+  content: "›";
+  font-size: 1.2rem;
+  color: #666;
+  margin-left: auto;
+  padding-left: 5px;
+}
+
+/* Login button */
+.loginButton {
+  margin-top: 2.5rem;        /* ⬅️ moved down ~10px */
+  text-align: center;   /* center text horizontally */
+  padding: 0.6rem 1.8rem;    /* ⬅️ longer button */
+  border-radius: 15px;
+  font-size: 1.2rem;         /* ⬅️ bigger text */
+  font-weight: 700;          /* ⬅️ bold */
+}
+
+
+.loginWrapper button {
+  margin-top: 3rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  padding: 0.7rem 2rem;
+}
+.loginWrapper button svg {
+  font-size: 1.4rem;         /* ⬅️ bigger icon if arrow is SVG */
+}
+
+
+.loginWrapper button span {
+  position: relative;
+  top: 2px;      /* nudges text down */
+  left: 4px;     /* nudges text right */
+}
+
+.loginWrapper {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.loginImage {
+  display: block;
+  width: 100%;
+}
+
+.loginContent {
+  position: absolute;
+  top: 45%;              /* ⬅️ adjust this to move text higher/lower */
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;           /* white text */
+}
+
+.loginArrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #fff;
+  color: #ed560e;
+}
+
+
+
+
+
+
+.loginWrapper::after {
+  content: none !important;
+}
+
+
+
+/* Toggle buttons inside hamburger menu */
+.toggle {
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem 0;
+  gap: 0;
+}
+
+.activeToggle,
+.inactiveToggle {
+  flex: 1;
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: black;
+  padding: 0.6rem 0.5rem;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.activeToggle {
+  background-color: #ed560e;
+  color: #000;
+  border-radius: 5px 0 0 5px;
+}
+
+.inactiveToggle {
+  background-color: #fff;
+  border: 1px solid #d8d6d6;
+  border-radius: 0 5px 5px 0;
+}
+
+@media (min-width: 375px) {
+  .activeToggle,
+  .inactiveToggle {
+    font-size: 0.85rem;
+    padding: 0.65rem 0.8rem;
+  }
+}
+
+@media (min-width: 425px) {
+  .activeToggle,
+  .inactiveToggle {
+    font-size: 0.95rem;
+    padding: 0.7rem 1.2rem;
+  }
+}
+
+@media (min-width: 600px) {
+  .activeToggle,
+  .inactiveToggle {
+    font-size: 1.1rem;
+    padding: 0.7rem 1.8rem;
+  }
+}
+
+.noChevron::after {
+  content: none !important;
+}
+
+
+
+
+
+/* Hide overlay on desktop only */
+@media (min-width: 1024px) {
+  .overlay {
+    display: none;
+  }
+}
+
+
+
+

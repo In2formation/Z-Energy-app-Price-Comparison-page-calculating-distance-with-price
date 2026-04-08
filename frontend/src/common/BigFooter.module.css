@@ -1,0 +1,190 @@
+.topSection {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px;
+  padding: 48px 60px 40px;
+}
+
+.logoWrap {
+  flex-shrink: 0;
+  padding-top: 4px;
+}
+
+.logo {
+  width: 58px;
+  height: auto;
+}
+
+.navColumns {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 28px;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.columnHeading {
+  margin: 0 0 6px;
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #1d1973;
+  line-height: 1.2;
+}
+
+.navLink {
+  text-decoration: none;
+  color: #4a4a4a;
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.navLink:hover {
+  text-decoration: underline;
+}
+
+.rightPanel {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 20px;
+}
+
+.contactBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 10px 10px 20px;
+  border: none;
+  border-radius: 999px;
+  background: #f36f21;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.contactIcon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #ffffff;
+  color: #f36f21;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+}
+
+.socials {
+  display: flex;
+  gap: 10px;
+}
+
+.socialIcon {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #f36f21;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.storeBadges {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 16px;
+  border-radius: 8px;
+  background: #000000;
+  color: #ffffff;
+  text-decoration: none;
+  min-width: 160px;
+}
+
+.badgeIcon {
+  font-size: 1.4rem;
+  flex-shrink: 0;
+}
+
+.badgeText {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.badgeText small {
+  font-size: 0.6rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 1200px) {
+  .topSection {
+    flex-wrap: wrap;
+    padding: 36px 32px 32px;
+  }
+
+  .navColumns {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .rightPanel {
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .storeBadges {
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 768px) {
+  .topSection {
+    padding: 20px 16px 16px;
+  }
+
+  .logoWrap,
+  .contactBtn,
+  .socials,
+  .storeBadges {
+    display: none;
+  }
+
+  .navColumns {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .rightPanel {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .storeBadges {
+    flex-direction: row;
+  }
+}

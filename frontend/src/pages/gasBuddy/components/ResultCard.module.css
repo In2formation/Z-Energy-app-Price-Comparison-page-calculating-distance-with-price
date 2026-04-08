@@ -1,0 +1,128 @@
+/* INDIVIDUAL RESULT CARD */
+.resultCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px;
+  border-radius: 8px;
+  background: #ffffff;
+  border: 1px solid #e8e8e8;
+  transition: all 0.3s ease;
+}
+
+.resultCard:hover {
+  background: #f9f9f9;
+  border-color: #ddd;
+}
+
+.pageWrapper.dark .resultCard {
+  background: #1e1e1e;
+  border-color: #333;
+}
+
+.pageWrapper.dark .resultCard:hover {
+  background: #2a2a2a;
+  border-color: #444;
+}
+
+.resultLeft {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 4px;
+}
+
+.stationName {
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+  transition: font-size 0.3s ease;
+}
+
+.pageWrapper.dark .stationName {
+  color: #e5e5e5;
+}
+
+.stationCity {
+  font-size: 13px;
+  color: #666;
+  transition: font-size 0.3s ease;
+}
+
+.stationDistance {
+  font-size: 12px;
+  color: #888;
+  font-weight: 500;
+  transition: font-size 0.3s ease;
+}
+
+.pageWrapper.dark .stationCity,
+.pageWrapper.dark .stationDistance {
+  color: #aaa;
+}
+
+/* PRICE TAG */
+.resultRight {
+  display: flex;
+  align-items: center;
+  margin-left: 20px;
+}
+
+.priceTag {
+  font-size: 16px;
+  font-weight: 700;
+  color: #1a7f00;
+  text-align: right;
+  white-space: pre-line;
+  transition: font-size 0.3s ease;
+}
+
+.pageWrapper.dark .priceTag {
+  color: #7cff7c;
+}
+
+/* Tablet and up */
+@media (min-width: 600px) {
+  .resultCard {
+    padding: 15px 16px;
+  }
+
+  .stationName {
+    font-size: 16.5px;
+  }
+
+  .stationCity {
+    font-size: 13.5px;
+  }
+
+  .stationDistance {
+    font-size: 12.5px;
+  }
+
+  .priceTag {
+    font-size: 17px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 769px) {
+  .resultCard {
+    padding: 16px 18px;
+  }
+
+  .stationName {
+    font-size: 17px;
+  }
+
+  .stationCity {
+    font-size: 14px;
+  }
+
+  .stationDistance {
+    font-size: 13px;
+  }
+
+  .priceTag {
+    font-size: 18px;
+  }
+}

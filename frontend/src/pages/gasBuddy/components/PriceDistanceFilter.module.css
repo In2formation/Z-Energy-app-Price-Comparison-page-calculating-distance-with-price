@@ -1,0 +1,180 @@
+/* FILTER WRAPPER STYLES */
+.filterWrapper {
+  position: relative;
+  display: inline-block;
+}
+
+/* Icon button */
+.iconButton {
+  all: unset;              /* reset all default button styles */
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.iconButton img {
+  display: block;
+  width: 28px;
+  height: 28px;
+}
+
+
+
+
+
+/* Panel */
+.filterPanel {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 14px;
+  margin-top: 8px;
+  z-index: 1000;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  min-width: 250px;
+  transition: all 0.3s ease;
+}
+
+.pageWrapper.dark .filterPanel {
+  background: #2a2a2a;
+  border-color: #444;
+}
+
+/* Sections */
+.filterSection {
+  margin-bottom: 14px;
+  transition: margin 0.3s ease;
+}
+
+.filterSection:last-child {
+  margin-bottom: 0;
+}
+
+.filterLabel {
+  font-size: 12px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #333;
+  transition: font-size 0.3s ease;
+}
+
+.centerDropdown,
+.fuelBar {
+  padding: 6px 8px;        /* reduce vertical + horizontal padding */
+  font-size: 13px;         /* slightly smaller text */
+  min-width: 120px;        /* narrower so sides align with icon */
+  line-height: 1.2;        /* tighter vertical alignment */
+  height: auto;            /* let content define height */
+  box-sizing: border-box;  /* ensures border/padding don’t overshoot */
+}
+
+.centerDropdown {
+  margin-top: -3px;        /* lift up slightly */
+  margin-bottom: -5px;     /* reduce bottom overshoot */
+  margin-left: -2.5px;
+  margin-right: -2.5px;
+  
+}
+
+.fuelBar {
+  margin-top: -3px;
+  margin-bottom: -5px;
+  margin-left: -2.5px;
+  margin-right: -2.5px;
+}
+
+
+
+.pageWrapper.dark .filterLabel {
+  color: #e5e5e5;
+}
+
+/* Slider styling */
+.slider {
+  width: 100%;
+  height: 6px;
+  border-radius: 3px;
+  background: #ddd;
+  outline: none;
+  appearance: none;
+  -webkit-appearance: none;
+  transition: all 0.3s ease;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #1E196A;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.slider::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #1E196A;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+/* Tablet and up */
+@media (min-width: 600px) {
+  .filterPanel {
+    padding: 15px;
+    min-width: 265px;
+  }
+
+  .filterSection {
+    margin-bottom: 15px;
+  }
+
+  .filterLabel {
+    font-size: 12.5px;
+  }
+
+  .slider::-webkit-slider-thumb {
+    width: 17px;
+    height: 17px;
+  }
+
+  .slider::-moz-range-thumb {
+    width: 17px;
+    height: 17px;
+  }
+}
+
+/* Desktop */
+@media (min-width: 769px) {
+  .filterPanel {
+    padding: 16px;
+    min-width: 280px;
+  }
+
+  .filterSection {
+    margin-bottom: 16px;
+  }
+
+  .filterLabel {
+    font-size: 13px;
+  }
+
+  .slider::-webkit-slider-thumb {
+    width: 18px;
+    height: 18px;
+  }
+
+  .slider::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+  }
+}

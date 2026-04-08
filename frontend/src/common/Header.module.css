@@ -1,0 +1,176 @@
+/* ----- MOBILE HEADER ----- */
+
+.mobileHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 0.8rem 0.8rem;
+  /* height: 4rem; */
+}
+
+.mobileLogo {
+  height: 2.5rem;
+  width: auto;
+  margin-left: 1.5rem;
+}
+
+.iconContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.searchIcon {
+  font-size: 1.5rem;
+  color: #383636f3;
+}
+
+.hamburgerIcon {
+  font-size: 2.5rem;
+  color: #ed560e;
+  border-left: 2px solid #ed560e;
+  padding-left: 0.75rem;
+}
+
+/* ----- Hide Desktop Header By Default (mobile first) ----- */
+.desktopHeader {
+  display: none;
+}
+
+/* Desktop styles */
+@media (min-width: 1024px) {
+  .mobileHeader {
+    display: none;
+  }
+
+  .desktopHeader {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    /* background-color: #efefef; */
+  }
+
+  .desktopRow1Outer {
+    width: 100%;
+    /* background-color: #efefef; */
+    border-bottom: 0.01rem solid black;
+}
+
+  .desktopRow1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 4rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0.2rem;
+  }
+
+  .desktopRow2Outer {
+    width: 100%;
+    background-color: #efefef;
+  }
+
+  .desktopRow2 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 4rem;
+    /* border-top: 0.01rem solid black; */
+    background-color: #efefef;
+    max-width: 1160px;
+    margin: 0 auto;
+    width: 100%;
+  }
+  .desktopLogo {
+    height: 4rem;
+    width: auto;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    margin-right: 1.5rem;
+    margin-left: 1.5rem;
+  }
+
+  .toggle {
+    margin-left: auto;
+    margin-right: 3rem;
+    display: flex;
+  }
+
+  .activeToggle {
+    background-color: #ed560e;
+    color: #ffffff;
+    font-weight: 600;
+    border: none;
+    padding: 0.6rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .inactiveToggle {
+    background-color: #ffffff;
+    color: black;
+    font-weight: 600;
+    border: 0.01rem solid #d8d6d6;
+    border-radius: 5px;
+    padding: 0.6rem 1.5rem;
+    cursor: pointer;
+  }
+
+  .navLinks {
+    display: flex;
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+
+  .navLinks a {
+    text-decoration: none;
+    color: #1a1a1a;
+    font-weight: 600;
+    font-size: 0.8rem;
+  }
+
+  .navItem {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    cursor: pointer;
+    font-weight: 500;
+    padding: 1.5rem;
+    font-size: 0.8rem;
+    margin-top: 1rem;
+    cursor: pointer;
+  }
+
+  .chevron {
+    font-size: 1rem;
+    cursor: pointer;
+  }
+
+  .searchLogin {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    padding: 2rem;
+  }
+
+  .desktopSearchIcon {
+    color: #ed560e;
+    font-weight: 600;
+    font-size: 1.5rem;
+  }
+
+  .loginButton {
+    padding: 0.5rem;
+    background-color: #ed560e;
+    border-radius: 20px;
+    border: none;
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 500;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    cursor: pointer;
+  }
+}

@@ -1,0 +1,436 @@
+/*
+  Purpose:
+  Provide all visual styling and responsive behavior for the Home page.
+
+  What:
+  This stylesheet defines Home section layout, typography, spacing, action button styles,
+  card styling, and breakpoint-driven variable tuning.
+
+  Why:
+  Centralizing Home styles here keeps presentation concerns isolated to the page so UI
+  refinements do not leak into other pages.
+*/
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@500;600;700;800&family=Nunito+Sans:wght@400;600;700;800&display=swap");
+
+/* Global Home design tokens used to scale layout and typography consistently. */
+:root {
+  --home-heading-font: "Barlow", "Segoe UI", sans-serif;
+  --home-body-font: "Nunito Sans", "Segoe UI", sans-serif;
+  --home-page-padding-bottom: 20px;
+  --home-hero-height: clamp(170px, 33vw, 300px);
+  --home-intro-min-height: 218px;
+  --home-map-max-width: 56%;
+  --home-map-opacity: 1;
+  --home-intro-padding: 44px 40px;
+  --home-intro-gap: 14px;
+  --home-intro-max-width: 430px;
+  --home-intro-title-size: clamp(1.75rem, 3.4vw, 2.7rem);
+  --home-closest-font-size: 0.9rem;
+  --home-closest-padding: 9px 14px;
+  --home-section-side-padding: 28px;
+  --home-services-top-padding: 26px;
+  --home-services-bottom-padding: 30px;
+  --home-services-title-size: clamp(1.45rem, 2.1vw, 2.1rem);
+  --home-services-copy-size: 1rem;
+  --home-services-copy-line: 1.38;
+  --home-primary-btn-margin-top: 18px;
+  --home-primary-btn-size: 0.92rem;
+  --home-primary-btn-padding: 10px 16px;
+  --home-action-row-gap: 10px;
+  --home-action-cols: 3;
+  --home-action-font-size: 0.88rem;
+  --home-action-padding: 11px 12px;
+  --home-action-icon-size: 0.95rem;
+  --home-service-cols: 2;
+  --home-service-gap: 14px;
+  --home-service-padding: 12px 14px;
+  --home-service-size: 1rem;
+  --home-service-icon-size: 1rem;
+  --home-arrow-size: 0.95rem;
+  --home-rewards-top-padding: 26px;
+  --home-rewards-bottom-padding: 26px;
+  --home-rewards-cols: 3;
+  --home-reward-gap: 10px;
+  --home-reward-min-height: 180px;
+  --home-reward-padding: 14px;
+  --home-reward-title-size: 1.05rem;
+  --home-reward-copy-size: 0.9rem;
+  --home-sharetank-cols: 1fr minmax(220px, 320px);
+  --home-sharetank-gap: 22px;
+  --home-sharetank-top-padding: 24px;
+  --home-sharetank-bottom-padding: 28px;
+  --home-sharetank-title-size: clamp(1.8rem, 3vw, 2.5rem);
+  --home-sharetank-copy-size: 1rem;
+  --home-sharetank-copy-line: 1.36;
+  --home-sharetank-image-max-width: none;
+  --home-sharetank-image-justify: stretch;
+  --home-chat-right: 22px;
+  --home-chat-bottom: 22px;
+}
+
+/* Tablet breakpoint: reduce side padding and stack rewards for readability. */
+@media (max-width: 1024px) {
+  :root {
+    --home-section-side-padding: 18px;
+    --home-rewards-cols: 1;
+  }
+}
+
+/* Mobile breakpoint: compact spacing, typography, and control sizes. */
+@media (max-width: 768px) {
+  :root {
+    --home-hero-height: 120px;
+    --home-intro-min-height: 130px;
+    --home-map-max-width: 48%;
+    --home-map-opacity: 0.95;
+    --home-intro-padding: 14px 12px;
+    --home-intro-gap: 8px;
+    --home-intro-max-width: 190px;
+    --home-intro-title-size: 1.12rem;
+    --home-closest-font-size: 0.62rem;
+    --home-closest-padding: 6px 10px;
+    --home-services-top-padding: 16px;
+    --home-services-bottom-padding: 18px;
+    --home-services-title-size: 1.12rem;
+    --home-services-copy-size: 0.7rem;
+    --home-services-copy-line: 1.35;
+    --home-primary-btn-margin-top: 10px;
+    --home-primary-btn-size: 0.66rem;
+    --home-primary-btn-padding: 6px 10px;
+    --home-action-row-gap: 6px;
+    --home-action-cols: 1;
+    --home-action-font-size: 0.7rem;
+    --home-action-padding: 8px 9px;
+    --home-action-icon-size: 0.74rem;
+    --home-service-cols: 1;
+    --home-service-gap: 7px;
+    --home-service-padding: 6px 8px;
+    --home-service-size: 0.68rem;
+    --home-service-icon-size: 0.68rem;
+    --home-arrow-size: 0.68rem;
+    --home-rewards-top-padding: 16px;
+    --home-rewards-bottom-padding: 16px;
+    --home-reward-min-height: 0;
+    --home-reward-padding: 8px;
+    --home-reward-title-size: 0.7rem;
+    --home-reward-copy-size: 0.6rem;
+    --home-sharetank-cols: 1fr;
+    --home-sharetank-gap: 10px;
+    --home-sharetank-top-padding: 14px;
+    --home-sharetank-bottom-padding: 16px;
+    --home-sharetank-title-size: 1.24rem;
+    --home-sharetank-copy-size: 0.7rem;
+    --home-sharetank-copy-line: 1.35;
+    --home-sharetank-image-max-width: 185px;
+    --home-sharetank-image-justify: end;
+    --home-chat-right: 12px;
+    --home-chat-bottom: 12px;
+  }
+}
+
+/* Page shell and main content surface. */
+.page {
+  background: #efefef;
+  padding-bottom: var(--home-page-padding-bottom);
+  font-family: var(--home-body-font);
+  color: #2f2f2f;
+}
+
+.surfaceWrap {
+  width: min(1160px, 100%);
+  margin: 0 auto;
+  background: #efefef;
+  box-shadow: 0 8px 22px rgb(0 0 0 / 6%);
+}
+
+/* Top visual sections: hero and orange intro band. */
+.heroImage {
+  width: 100%;
+  height: var(--home-hero-height);
+  object-fit: cover;
+  display: block;
+}
+
+.introPanel {
+  position: relative;
+  background: linear-gradient(90deg, #f79c2f 0%, #f7a336 60%, #f9ad44 100%);
+  min-height: var(--home-intro-min-height);
+  overflow: hidden;
+}
+
+.mapBackground {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: auto;
+  max-width: var(--home-map-max-width);
+  object-fit: cover;
+  opacity: var(--home-map-opacity);
+}
+
+.introCopy {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  display: grid;
+  gap: var(--home-intro-gap);
+  padding: var(--home-intro-padding);
+  max-width: var(--home-intro-max-width);
+}
+
+.introCopy h1 {
+  margin: 0;
+  font-family: var(--home-heading-font);
+  font-weight: 800;
+  font-size: var(--home-intro-title-size);
+  line-height: 1.03;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+}
+
+/* Primary services section with action links and service cards. */
+.closestButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  text-decoration: none;
+  color: #fff;
+  background: #171c6b;
+  border-radius: 999px;
+  padding: var(--home-closest-padding);
+  font-family: var(--home-heading-font);
+  font-size: var(--home-closest-font-size);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.servicesSection {
+  padding: var(--home-services-top-padding) var(--home-section-side-padding) var(--home-services-bottom-padding);
+  text-align: center;
+  border-bottom: 1px solid #dddddd;
+  background: linear-gradient(180deg, rgb(255 255 255 / 62%) 0%, rgb(255 255 255 / 15%) 100%);
+}
+
+.servicesSection h2,
+.rewardsSection h2 {
+  margin: 0;
+  font-family: var(--home-heading-font);
+  font-weight: 800;
+  color: #ef6c23;
+  font-size: var(--home-services-title-size);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+}
+
+.servicesSection p {
+  margin: 8px auto 0;
+  max-width: 820px;
+  color: #4a4a4a;
+  font-family: var(--home-body-font);
+  font-weight: 600;
+  font-size: var(--home-services-copy-size);
+  line-height: var(--home-services-copy-line);
+}
+
+.stationButton,
+.learnMoreButton {
+  margin-top: var(--home-primary-btn-margin-top);
+  border: none;
+  background: #ef6c23;
+  color: #fff;
+  border-radius: 999px;
+  padding: var(--home-primary-btn-padding);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--home-heading-font);
+  font-size: var(--home-primary-btn-size);
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+}
+
+.actionButtonsRow {
+  margin-top: var(--home-primary-btn-margin-top);
+  display: grid;
+  grid-template-columns: repeat(var(--home-action-cols), minmax(0, 1fr));
+  gap: var(--home-action-row-gap);
+}
+
+.actionButton {
+  text-decoration: none;
+  border-radius: 999px;
+  background: #ef6c23;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  font-family: var(--home-heading-font);
+  font-weight: 700;
+  font-size: var(--home-action-font-size);
+  letter-spacing: 0.01em;
+  padding: var(--home-action-padding);
+  box-shadow: 0 8px 14px rgb(239 108 35 / 24%);
+  transition: transform 140ms ease, box-shadow 140ms ease, filter 140ms ease;
+}
+
+.actionButton:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 16px rgb(239 108 35 / 30%);
+  filter: brightness(1.02);
+}
+
+/* Price compare icon composition for the dual-dollar symbol treatment. */
+.actionButtonIcon {
+  font-size: var(--home-action-icon-size);
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.comparePriceIcon {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.compareArrow {
+  font-size: 0.75em;
+}
+
+
+/* Service highlight cards and arrow affordances. */
+.serviceGrid {
+  margin-top: 18px;
+  display: grid;
+  grid-template-columns: repeat(var(--home-service-cols), minmax(0, 1fr));
+  gap: var(--home-service-gap);
+}
+
+.serviceCard {
+  border: 1.4px solid #d0d0d0;
+  border-radius: 4px;
+  background: #fff;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  text-align: left;
+  gap: 10px;
+  padding: var(--home-service-padding);
+  color: #303030;
+  font-family: var(--home-heading-font);
+  font-weight: 600;
+  font-size: var(--home-service-size);
+  box-shadow: 0 1px 2px rgb(0 0 0 / 6%);
+}
+
+.serviceIcon {
+  color: #6f6f7b;
+  font-size: var(--home-service-icon-size);
+}
+
+.serviceArrow,
+.rewardArrow {
+  color: #1f237e;
+  font-size: var(--home-arrow-size);
+}
+
+/* Rewards section cards. */
+.rewardsSection {
+  padding: var(--home-rewards-top-padding) var(--home-section-side-padding) var(--home-rewards-bottom-padding);
+}
+
+.rewardsGrid {
+  margin-top: 14px;
+  display: grid;
+  grid-template-columns: repeat(var(--home-rewards-cols), minmax(0, 1fr));
+  gap: var(--home-reward-gap);
+}
+
+.rewardCard {
+  border: 1.3px solid #d9d9d9;
+  border-radius: 12px;
+  background: #fff;
+  min-height: var(--home-reward-min-height);
+  padding: var(--home-reward-padding);
+  display: grid;
+  align-content: start;
+  gap: 8px;
+}
+
+.rewardCard h3 {
+  margin: 0;
+  color: #2f2f2f;
+  font-family: var(--home-heading-font);
+  font-weight: 700;
+  font-size: var(--home-reward-title-size);
+  line-height: 1.15;
+}
+
+.rewardCard p {
+  margin: 0;
+  color: #555;
+  font-family: var(--home-body-font);
+  font-weight: 600;
+  font-size: var(--home-reward-copy-size);
+  line-height: 1.35;
+}
+
+/* Sharetank feature strip near the lower part of the page. */
+.sharetankSection {
+  border-top: 1px solid #dddddd;
+  display: grid;
+  grid-template-columns: var(--home-sharetank-cols);
+  align-items: center;
+  gap: var(--home-sharetank-gap);
+  padding: var(--home-sharetank-top-padding) var(--home-section-side-padding) var(--home-sharetank-bottom-padding);
+}
+
+.sharetankCopy h2 {
+  margin: 0;
+  font-family: var(--home-heading-font);
+  font-weight: 800;
+  font-size: var(--home-sharetank-title-size);
+  line-height: 1;
+  color: #ef6c23;
+  display: grid;
+  gap: 3px;
+}
+
+.sharetankCopy h2 span {
+  font-family: var(--home-heading-font);
+  font-size: 0.68em;
+  color: #5f6678;
+  letter-spacing: 0.05em;
+}
+
+.sharetankCopy p {
+  margin: 12px 0 0;
+  max-width: 490px;
+  color: #4f4f4f;
+  font-family: var(--home-body-font);
+  font-weight: 600;
+  line-height: var(--home-sharetank-copy-line);
+  font-size: var(--home-sharetank-copy-size);
+}
+
+.sharetankImage {
+  width: 100%;
+  border-radius: 14px;
+  display: block;
+  max-width: var(--home-sharetank-image-max-width);
+  justify-self: var(--home-sharetank-image-justify);
+}
+
+/* Floating chatbot anchor position on Home. */
+.chatSection {
+  position: fixed;
+  right: var(--home-chat-right);
+  bottom: var(--home-chat-bottom);
+  z-index: 80;
+}
+ 

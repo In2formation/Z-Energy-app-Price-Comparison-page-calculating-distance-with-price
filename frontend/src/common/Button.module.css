@@ -1,0 +1,87 @@
+/* Base styles every button gets */
+.button {
+    border-radius: 50px;
+    font-weight: 500;
+    cursor: pointer;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    align-self: center;
+    box-sizing: border-box;
+    width: fit-content;
+}
+
+/* variants */
+.primary { 
+    background-color: #ed602e; 
+    color: white; }
+
+.dark { 
+    background-color: #1e196A; 
+    color: white; }
+
+.outline { 
+    background-color: white; 
+    color: #ed602e; 
+    border: 2px solid #ed602e;
+}
+
+/* Sizes */
+.small {
+    padding: 0.6rem 1rem; 
+    font-size: 0.7rem; 
+    width: 130px;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.large {
+    padding: 0.6rem 1rem;
+    font-size: 0.7rem;
+    width: 200px;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.medium {
+    padding: 0.65rem 1.25rem;
+    font-size: 1rem;
+    font-weight: 700;
+    width: fit-content;
+    white-space: nowrap;
+}
+
+
+/* Find your closest Z icon */
+.iconArrow {
+  font-size: 1.5rem;
+  color: white;
+  padding: 0.1rem;
+  border: none;
+}
+
+/* Contact us icon */
+.iconContact {
+    font-size: 1.5rem;
+    background-color: #ffffff;
+    color: #ed602e;
+    border-radius: 50%;
+    padding: 0.3rem;
+}
+
+/* get directions icon */
+.iconDirections {
+    font-size: 1.5rem;
+    color: #ffffff;
+    padding: 0.1rem;
+}
+
+/* See how/learn more icon */
+.iconSeeHow {
+    font-size: 1.7rem;
+    color: #ffffff;
+    padding: 0.2rem;
+    border-radius: 50%;
+    border: 0.15rem solid #ffffff;
+}

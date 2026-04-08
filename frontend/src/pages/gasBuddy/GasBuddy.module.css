@@ -1,0 +1,73 @@
+:root {
+  --max-width: 1400px;
+  --content-width: 1284px;
+  --border-color: #e0e0e0;
+  --bg-white: #ffffff;
+  --bg-gray: #f0f0f0;
+  --text-dark: #333;
+  --transition: all 0.3s ease;
+}
+
+/* === PAGE === */
+.page {
+  background: #efefef;
+}
+
+/* === PAGE WRAPPER === */
+.pageWrapper {
+  display: flex;
+  flex-direction: column;
+  width: min(1160px, 100%);
+  margin: 0 auto;
+  background: var(--bg-white);
+  font-family: system-ui, sans-serif;
+  transition: var(--transition);
+}
+
+.pageWrapper.dark {
+  background: #121212;
+  color: #e5e5e5;
+}
+
+/* === MAP BORDER === */
+.mapBorder {
+  width: 100%;
+  max-width: var(--content-width);
+  height: 25px;
+  margin: 0 auto;
+  background: var(--bg-white);
+  border: 3px solid var(--bg-white);
+  transition: var(--transition);
+}
+
+.pageWrapper.dark .mapBorder {
+  background: #1e1e1e;
+  border-color: #333;
+}
+
+/* === AI SECTION === */
+.aiSection {
+  background-color: #efefef;
+  display: flex;
+  justify-content: flex-end;
+  padding: 1rem 1.5rem;
+}
+
+/* === RESPONSIVE === */
+@media (min-width: 600px) {
+  .mapBorder {
+    height: 30px;
+  }
+}
+
+@media (min-width: 769px) {
+  .mapBorder {
+    height: 35px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .aiSection {
+    padding: 1rem 2rem;
+  }
+}

@@ -1,0 +1,116 @@
+/* ----- FindAStation.module.css ----- */
+.page {
+  background: #efefef;
+  padding-bottom: var(--home-page-padding-bottom);
+}
+
+.errorMessage {
+  color: red;
+  text-align: center;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+}
+
+.surfaceWrap {
+  width: min(1160px, 100%);
+  margin: 0 auto;
+  background: #efefef;
+}
+
+.buttonContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem 1rem;
+  gap: 1rem;
+  position: relative;
+}
+
+.aiChatbotWrapper {
+  display: flex;
+  position: absolute;
+  right: 1rem;
+  top: 10%;
+  z-index: 1000;
+}
+
+.desktopAiWrapper {
+  display: none;
+}
+
+.stackedButtons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.mapWrapper {
+  flex: 1;
+}
+
+.mapSection {
+  display: flex;
+  flex-direction: column;
+}
+
+.footerContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* ----- RESPONSIVENESS ----- */
+/* Tablet */
+@media (min-width: 768px) {
+  .mapSection {
+    flex-direction: row;
+    align-items: flex-start;
+    height: 500px;
+  }
+
+  .mapWrapper {
+    flex: 2;
+    height: 500px;
+  }
+
+  .buttonContainer {
+    display: none;
+  }
+
+  .desktopAiWrapper {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem 1.5rem;
+  }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+  .mapWrapper {
+    flex: 2;
+    height: 600px;
+  }
+  
+  .mapSection {
+    flex-direction: row;
+    align-items: flex-start;
+    height: 600px;
+  }
+
+  .buttonContainer {
+    display: none;
+  }
+
+  .desktopAiWrapper {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1rem 2rem;
+  }
+
+  .footerContainer {
+    flex-direction: row;
+  }
+
+}
