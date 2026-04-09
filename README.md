@@ -1,4 +1,4 @@
-# Z Energy Station Locator
+# Z Energy App
 
 A full-stack web application for Z Energy customers to find nearby fuel stations, compare fuel prices across locations, and interact with an AI-powered assistant. Built collaboratively following UX design specifications with high-fidelity mockups and a comprehensive UI kit. Features robust backend testing suite ensuring reliability and code quality.
 
