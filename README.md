@@ -17,7 +17,7 @@ This application provides Z Energy customers with a comprehensive platform to lo
 
 ## My Contributions
 
-### Gas Buddy - Price Comparison Page
+### Price Comparison Page
 Designed and implemented the complete fuel price comparison feature from concept to deployment:
 
 **Frontend Development:**
